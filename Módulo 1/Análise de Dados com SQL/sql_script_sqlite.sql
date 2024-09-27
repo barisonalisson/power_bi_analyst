@@ -8,8 +8,8 @@ SELECT AlbumId, Title FROM Album a WHERE Column1 is NULL;
 SELECT * FROM Artist a;
 
 -- caracterizando os registros dos artistas
-SELECT a2.ArtistId, a2.Name, count(*) as Records from Album a INNER JOIN Artist a2 GROUP BY 1;
-SELECT a2.ArtistId, a2.Name, count(*) as Records from Album a INNER JOIN Artist a2 GROUP BY 1 ORDER BY Records LIMIT 3;
+SELECT a2.ArtistId, a2.Name, count(*) as Records from Album a INNER JOIN Artist a2 ON a2.ArtistId=a.ArtistId GROUP BY 1;
+SELECT a2.ArtistId, a2.Name, count(*) as Records from Album a INNER JOIN Artist a2 ON a2.ArtistId=a.ArtistId GROUP BY 1 ORDER BY Records  LIMIT 3;
 
 SELECT * FROM Customer c LIMIT 10;
 SELECT COUNT(*) FROM Customer c2 ;
@@ -49,7 +49,7 @@ SELECT c.CustomerId, c.FirstName, COUNT(*) as Record FROM Invoice i
 	GROUP BY 1 ORDER BY Record;
 
 SELECT i.InvoiceId, il.InvoiceLineId  FROM Invoice i 
-	INNER JOIN InvoiceLine il 
+	INNER JOIN InvoiceLine il ON il.InvoiceId = i.InvoiceId 
 	INNER JOIN Customer c ON c.CustomerId = i.CustomerId 
 	GROUP BY 1
 	LIMIT 100;
