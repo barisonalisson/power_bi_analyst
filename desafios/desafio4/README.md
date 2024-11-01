@@ -3,32 +3,60 @@
 
 Criação das tabelas com base na tabela original(Financial Sample). A partir da cópia serão selecionadas as colunas que irão compor a visão da nova tabela. 
 
-Sendo assim, a partir da tabela principal foram criadas as tabelas:
+
+## Tabelas criadas
  - Financials_origem (modo oculto – apenas para backup)
  - D_Produtos
     - ID_produto
     - Produto
-    - Média de Unidades Vendidas
+    - Contagem
+    - Média da manufatura
     - Médias do valor de vendas
     - Mediana do valor de vendas
     - Valor máximo de Venda
     - Valor mínimo de Venda
  - D_Produtos_Detalhes
-    - ID_produtos
+    - ID_produto
     - Discount Band
-    - Sale Price
     - Units Sold
     - Manufactoring Price
+    - Sale Price
  - D_Descontos
     - ID_produto
-    - Discount
     - Discount Band
+    - Discounts
  - D_Detalhes
-    - 
-    - 
+    - Segment
+    - Country
+    - Produto
+    - Discount Band
+    - Units Sold
+    - Manufacuring Price
+    - Sale Price
+    - Sales
+    - COGS
+    - Profit
+    - Date
+    - Month Number
+    - Month Name
+    - Year
+    - Gross Sales
+    - Discounts
+    - ID_produto
+    - ID_venda
  - D_Calendário
-    - 
-    - 
+    - Date
+    - Year
+    - Quarter
+    - Month
+    - Month Name
+    - Day
+    - Day Name
+    - Day of Week
+    - Week of Month
+    - Week of Year
+    - Is Weekend
+    - Is leap Year
  - F_Vendas
     - SK_ID
     - ID_Produto
@@ -38,6 +66,11 @@ Sendo assim, a partir da tabela principal foram criadas as tabelas:
     - Discount Band
     - Segment
     - Country
-    - Salers
+    - Sales
     - Profit
     - Date (campos)
+    - Month Name
+    - Year
+
+## Versão final do Star Schema    
+![Star Schema](schema.png)
